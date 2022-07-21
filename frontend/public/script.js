@@ -12,7 +12,9 @@ window.addEventListener("load", loadEvent);
 
 const headerComponent = function(title) {
     return `
-        <header>${title}</header>
+        <header>
+            <h1>${title}</h1>
+        </header>
     `
 }
 
@@ -53,11 +55,12 @@ function loadEvent() {
 
 const beerCardComponent = function(beerName, beerCompany, beerType) {
     return `
-        <div class= 'card' onclick="onClick(this)" >
-            <div class= "beer-name">${beerName}</div>
-            <div class= "beer-company" onclick= "console.log(this); event.stopPropagation();">${beerCompany}</div>
-            <div class= "beer-type">${beerType}</div>
-        </div>
+        <section class= 'card' onclick="onClick(this)" >
+            <h1>${beerName}</h1>
+            <h2 onclick= "onClick(this); event.stopPropagation();">${beerCompany}</h2>
+            <h3>${beerType}</h3>
+            <button>Buy</button>
+        </section>
     `
 }
 
