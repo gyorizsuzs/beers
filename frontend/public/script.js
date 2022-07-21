@@ -10,12 +10,27 @@ console.log(beers.cards[5]);*/
 
 window.addEventListener("load", loadEvent);
 
+const headerComponent = function(title) {
+    return `
+        <header>${title}</header>
+    `
+}
+
+const footerComponent = function(company) {
+    return `
+        <footer>${company}</footer>
+    `
+}
+
 function loadEvent() {
     const rootElement = document.getElementById("root");
 
 
     //const beer = beers.cards[0]
     const beerCards = beers.cards;
+
+    rootElement.insertAdjacentHTML("beforebegin", headerComponent("Best Beers"));
+    rootElement.insertAdjacentHTML("afterend", footerComponent('Dreher'));
 
     // const beerName = beer.title;
     // const beerCompany = beer.sub;
@@ -55,3 +70,4 @@ function onClick(div) {
     //}
     div.classList.toggle('green');
 }
+
